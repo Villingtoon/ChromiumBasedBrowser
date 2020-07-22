@@ -1,6 +1,6 @@
 ﻿namespace ChromiumBasedBrowser
 {
-    partial class Form1
+    partial class Browser
     {
         /// <summary>
         /// Required designer variable.
