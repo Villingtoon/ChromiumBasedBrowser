@@ -29,11 +29,45 @@ namespace ChromiumBasedBrowser
             browser.Width = 400;
             browser.Dock = DockStyle.Fill;
             this.Controls.Add(browser);
+            browser.AddressChanged += Browser_AddressChanged;
         }
 
         private void toolStripButtonGo_Click(object sender, EventArgs e)
         {
-            browser.Load(toolStripAdressBar.Text);
+            try
+            {
+                browser.Load(toolStripAdressBar.Text);
+            }
+
+            catch
+            {
+
+            }
+        }
+
+        private void toolStripButtonBack_Click(object sender, EventArgs e)
+        {
+            browser.Back();
+        }
+
+        private void toolStripButtonForward_Click(object sender, EventArgs e)
+        {
+            browser.Forward();
+        }
+
+        private void Browser_AddressChanged(object sender, AddressChangedEventArgs e)
+        {
+            //var selectedBrowser = (ChromiumWebBrowser)sender;
+
+            this.Invoke(new MethodInvoker(() =>
+            {
+                toolStripAdressBar.Text = e.Address;
+            }));
+        }
+
+        private void toolStripButtonReload_Click(object sender, EventArgs e)
+        {
+            browser.Reload();
         }
     }
 }
