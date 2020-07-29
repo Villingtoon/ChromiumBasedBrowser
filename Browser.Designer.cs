@@ -64,8 +64,10 @@
             // 
             // toolStripAdressBar
             // 
+            this.toolStripAdressBar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripAdressBar.Name = "toolStripAdressBar";
             this.toolStripAdressBar.Size = new System.Drawing.Size(400, 25);
+            this.toolStripAdressBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripAdressBar_KeyDown);
             // 
             // toolStripButtonBack
             // 

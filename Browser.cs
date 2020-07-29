@@ -69,5 +69,21 @@ namespace ChromiumBasedBrowser
         {
             browser.Reload();
         }
+
+        private void toolStripAdressBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    browser.Load(toolStripAdressBar.Text);
+                }
+
+                catch
+                {
+
+                }
+            }
+        }
     }
 }
